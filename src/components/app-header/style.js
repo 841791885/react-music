@@ -19,13 +19,15 @@ export const HeaderWrapper = styled.div`
 
 export const HeaderLeft = styled.div`
   display: flex;
+
   .logo {
     display: block;
     width: 176px;
-    height: 69px;
+    height: 70px;
     background-position: 0 0;
     text-indent: -9999px;
   }
+
   .select-list {
     display: flex;
     line-height: 70px;
@@ -37,14 +39,6 @@ export const HeaderLeft = styled.div`
         display: block;
         padding: 0 20px;
         color: #ccc;
-      }
-
-      //active是超链接点击就会自带的类名
-      &:hover a,
-      .active {
-        color: #fff;
-        background: #000;
-        text-decoration: none;
       }
 
       :last-of-type a {
@@ -61,6 +55,13 @@ export const HeaderLeft = styled.div`
         }
       }
 
+      &:hover a,
+      .active {
+        color: #fff;
+        background: #000;
+        text-decoration: none;
+      }
+
       .active .icon {
         position: absolute;
         display: inline-block;
@@ -74,6 +75,7 @@ export const HeaderLeft = styled.div`
     }
   }
 `
+
 export const HeaderRight = styled.div`
   display: flex;
   align-items: center;
