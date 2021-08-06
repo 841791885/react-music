@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {} from './style'
 
-export default function Ranking() {
+function Ranking() {
   return <div>Ranking</div>
 }
+export default memo(Ranking)

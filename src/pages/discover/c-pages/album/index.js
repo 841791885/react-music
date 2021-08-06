@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {} from './style'
 
-export default function Album() {
+function Album() {
   return <div>album</div>
 }
+
+export default memo(Album)

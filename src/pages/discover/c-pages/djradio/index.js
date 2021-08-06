@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {} from './style'
 
-export default function Diradio() {
+function Diradio() {
   return <div>Diradio</div>
 }
+
+export default memo(Diradio)
