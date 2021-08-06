@@ -28,7 +28,7 @@ const router = [
       {
         path: '/discover',
         exact: true,
-        render: () => <Redirect to={'/discover/artist'} />,
+        render: () => <Redirect to={'/discover/recommend'} />,
       },
       {
         path: '/discover/recommend',
