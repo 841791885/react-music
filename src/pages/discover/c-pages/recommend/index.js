@@ -1,10 +1,18 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo } from 'react'
 /**普通写法 
 import { connect } from 'react-redux'
 */
-import { RecommendWraper } from './style'
+import {
+  RecommendWraper,
+  Content,
+  RecommendRight,
+  RecommendLeft,
+} from './style'
 
-import TopBanner from './c-cps/TopBanner'
+import TopBanner from './c-cps/top-banner'
+import HotRecommend from './c-cps/hot-recommend'
+import NewAlbum from './c-cps/new-album'
+import RecommendRank from './c-cps/recommend-ranking'
 
 function Recommend(props) {
   /*  
@@ -20,6 +28,14 @@ function Recommend(props) {
   return (
     <RecommendWraper>
       <TopBanner />
+      <Content className="wrap-v2">
+        <RecommendLeft>
+          <HotRecommend />
+          <NewAlbum />
+          <RecommendRank />
+        </RecommendLeft>
+        <RecommendRight></RecommendRight>
+      </Content>
     </RecommendWraper>
   )
 }
