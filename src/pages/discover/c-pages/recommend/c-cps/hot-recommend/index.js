@@ -15,7 +15,6 @@ export default memo(function HotRecommend() {
   )
   const dispatch = useDispatch()
 
-  console.log(recommends)
   useEffect(() => {
     dispatch(getRecommend())
   }, [dispatch])
@@ -30,7 +29,6 @@ export default memo(function HotRecommend() {
           <ThemeCover info={item} key={item.id} />
         ))}
       </div>
-      <h2>hot recommend</h2>
     </HotRecommendWrapper>
   )
 })

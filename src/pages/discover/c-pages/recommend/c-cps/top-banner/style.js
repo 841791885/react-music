@@ -31,7 +31,6 @@ export const BannerRight = styled.a.attrs({
 })`
   width: 254px;
   height: 270px;
-  background-color: #bfa;
   background: url(${downloadImg});
 `
 

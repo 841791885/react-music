@@ -11,3 +11,12 @@ export function getHotRecommend() {
     url: '/personalized',
   })
 }
+
+export function getNewAlbum(limit = 8) {
+  return request({
+    url: '/top/album',
+    params: {
+      limit,
+    },
+  })
+}

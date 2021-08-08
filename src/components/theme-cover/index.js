@@ -24,7 +24,7 @@ export default memo(function ThemeCover(props) {
       </div>
       <div className="cover-bottom text-nowrap">{info.name}</div>
       <div className="cover-sourcw text-nowrap">
-        {info.copywriter || info.creator.nickname}
+        {info?.copywriter || info.creator?.nickname || ''}
       </div>
     </ThemeCoverWrapper>
   )
