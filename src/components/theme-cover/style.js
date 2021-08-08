@@ -2,14 +2,20 @@ import styled from 'styled-components'
 
 export const ThemeCoverWrapper = styled.div`
   width: 140px;
+  margin: 20px ${(props) => props.right || 0} 20px 0;
 
   .cover-top {
     position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     & > img {
       width: 140px;
       height: 140px;
     }
+
     .cover {
       position: absolute;
       left: 0;

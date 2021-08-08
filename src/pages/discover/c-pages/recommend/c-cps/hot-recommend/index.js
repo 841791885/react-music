@@ -4,7 +4,7 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import { getRecommend } from '@/pages/discover/c-pages/recommend/store/actionCreators'
 
 import { HotRecommendWrapper } from './style'
-import ThemeHeaderRcm from '@/components/theme-header-rcm'
+import ThemeHeaderRCM from '@/components/theme-header-rcm'
 import ThemeCover from '@/components/theme-cover'
 export default memo(function HotRecommend() {
   const { recommends } = useSelector(
@@ -15,17 +15,21 @@ export default memo(function HotRecommend() {
   )
   const dispatch = useDispatch()
 
+  console.log(recommends)
   useEffect(() => {
     dispatch(getRecommend())
   }, [dispatch])
-  console.log(recommends)
   return (
     <HotRecommendWrapper>
-      <ThemeHeaderRcm
+      <ThemeHeaderRCM
         title="热门推荐"
         keywords={['华语', '流行', '摇滚', '民谣', '电子']}
       />
-      <ThemeCover />
+      <div className="recommend-list">
+        {recommends.slice(0, 8).map((item, index) => (
+          <ThemeCover info={item} key={item.id} />
+        ))}
+      </div>
       <h2>hot recommend</h2>
     </HotRecommendWrapper>
   )
