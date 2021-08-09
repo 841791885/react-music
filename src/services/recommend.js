@@ -20,3 +20,9 @@ export function getNewAlbum(limit = 8) {
     },
   })
 }
+export function getTopList(idx) {
+  return request({
+    url: '/top/list',
+    params: { idx },
+  })
+}
