@@ -16,24 +16,42 @@ export default memo(function NewAlbum() {
     }),
     shallowEqual
   )
+
   const carouselRef = useRef()
   useEffect(() => {
     // getNewAlbums().then((res) => console.log(res))
     dispatch(getAlbum())
   }, [dispatch])
+
+  const next = () => {
+    carouselRef.current.next()
+  }
+
+  function prev() {
+    carouselRef.current.prev()
+  }
   return (
     <AlbumWrapper>
       <ThemeHeaderRcm title="新碟上架" />
       <AlbumContent>
-        <div className="arrow arrow-left sprite_02"></div>
+        <div
+          className="arrow arrow-left sprite_02"
+          onClick={(e) => prev()}
+        ></div>
         <div className="album">
           <Carousel dots={false} ref={carouselRef}>
-            <div className="page">
-              <AlbumCover />
-            </div>
+            {[0, 1].map((item) => {
+              return (
+                <div key={item} className="page">
+                  {newAlbum.slice(item * 5, (item + 1) * 5).map((item) => (
+                    <AlbumCover key={item.id} info={item} />
+                  ))}
+                </div>
+              )
+            })}
           </Carousel>
         </div>
-        <div className="arrow arrow-right sprite_02"></div>
+        <div className="arrow arrow-right sprite_02" onClick={next}></div>
       </AlbumContent>
     </AlbumWrapper>
   )

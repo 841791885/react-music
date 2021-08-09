@@ -1,22 +1,21 @@
 import React, { memo } from 'react'
 
+import { getSizeImage } from '@/utils/format-utils'
+
 import { AlbumCoverWarpper } from './style'
 export default memo(function AlbumCover(props) {
   const { info = '', size = '100px', width = '118px', bgp = '-570px' } = props
   return (
     <AlbumCoverWarpper size={size} width={width} bgp={bgp}>
       <div className="album-image">
-        <img
-          src="https://p3.music.126.net/Nl4mFBPeN4Lqtqn3KOAvXQ==/109951166171044898.jpg?param=100y100"
-          alt="123123"
-        />
+        <img src={getSizeImage(info.picUrl, 150)} alt="" />
         <a href="/abc" className="cover sprite_covor">
-          123213s
+          {info.name}
         </a>
       </div>
       <div className="album-info">
-        <div className="name">asdasasdasdda</div>
-        <div className="artist">aklsjdklas</div>
+        <div className="name">{info.name}</div>
+        <div className="artist">{info.artist.name}</div>
       </div>
     </AlbumCoverWarpper>
   )
