@@ -23,6 +23,7 @@ export default memo(function HotRecommend() {
       <ThemeHeaderRCM
         title="热门推荐"
         keywords={['华语', '流行', '摇滚', '民谣', '电子']}
+        moreLink="/discover/songs"
       />
       <div className="recommend-list">
         {recommends.slice(0, 8).map((item, index) => (

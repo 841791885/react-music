@@ -32,7 +32,7 @@ export default memo(function NewAlbum() {
   }
   return (
     <AlbumWrapper>
-      <ThemeHeaderRcm title="新碟上架" />
+      <ThemeHeaderRcm title="新碟上架" moreLink="/discover/album" />
       <AlbumContent>
         <div
           className="arrow arrow-left sprite_02"

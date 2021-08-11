@@ -13,6 +13,9 @@ import TopBanner from './c-cps/top-banner'
 import HotRecommend from './c-cps/hot-recommend'
 import NewAlbum from './c-cps/new-album'
 import RecommendRank from './c-cps/recommend-ranking'
+import UserLogin from './c-cps/user-login'
+import SettleSing from './c-cps/settle-singer'
+import HotRadio from './c-cps/hot-radio'
 
 function Recommend(props) {
   /*  
@@ -34,7 +37,11 @@ function Recommend(props) {
           <NewAlbum />
           <RecommendRank />
         </RecommendLeft>
-        <RecommendRight></RecommendRight>
+        <RecommendRight>
+          <UserLogin />
+          <SettleSing />
+          <HotRadio />
+        </RecommendRight>
       </Content>
     </RecommendWraper>
   )

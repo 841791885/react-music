@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 
 import { HeaderWrapper } from './style'
 export default memo(function RcmHeader(props) {
-  const { title = '', keywords = [] } = props
+  const { title = '', keywords = [], moreLink = '' } = props
 
   return (
     <HeaderWrapper className="sprite_02">
@@ -20,7 +20,7 @@ export default memo(function RcmHeader(props) {
         </div>
       </div>
       <div className="right">
-        <a href="todo">更多</a>
+        <a href={moreLink}>更多</a>
         <i className="icon sprite_02"></i>
       </div>
     </HeaderWrapper>

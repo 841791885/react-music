@@ -14,12 +14,19 @@ export default memo(function RecommendRanking() {
     dispatch(getTopData(0))
     dispatch(getTopData(2))
     dispatch(getTopData(3))
-  }, [])
+  }, [dispatch])
+  const { topUpList, topNewList, topOriginList } = useSelector((state) => ({
+    topUpList: state.getIn(['recommend', 'topUpList']),
+    topNewList: state.getIn(['recommend', 'topNewList']),
+    topOriginList: state.getIn(['recommend', 'topOriginList']),
+  }))
   return (
     <RankWrapper>
-      <ThemeHeaderRcm title="榜单" />
+      <ThemeHeaderRcm title="榜单" moreLink="discover/ranking" />
       <div className="tops">
-        <TopRanking />
+        <TopRanking info={topUpList} />
+        <TopRanking info={topNewList} />
+        <TopRanking info={topOriginList} />
       </div>
     </RankWrapper>
   )
