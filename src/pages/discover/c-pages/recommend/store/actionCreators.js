@@ -6,6 +6,7 @@ import {
   getNewAlbum,
   getTopList,
 } from '@/services/recommend.js'
+import { getArtistList } from '@/services/artist.js'
 
 const changTopBannerAction = (res) => ({
   type: actionTypes.CHANGE_TOP_BANNERS,
@@ -73,6 +74,19 @@ export const getTopData = (idx) => {
         default:
           console.log('其他数据处理')
       }
+    })
+  }
+}
+
+const changeSettleSingsAction = (res) => ({
+  type: actionTypes.CHANGE_SETTLE_SONGER,
+  settleSings: res.artists,
+})
+
+export const getSettleSingers = () => {
+  return (dispath) => {
+    getArtistList(-1, 5, 5001).then((res) => {
+      dispath(changeSettleSingsAction(res))
     })
   }
 }
